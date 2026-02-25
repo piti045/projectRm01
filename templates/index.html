@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Language AI</title>
+</head>
+<body>
+    <h1>Hand Gesture Recognition</h1>
+
+    <!-- แสดงวิดีโอจาก Flask -->
+    <img src="{{ url_for('video') }}" width="640" height="480">
+
+    <h2>Text to Sign</h2>
+<input type="text" id="textInput">
+<button onclick="showSign()">Translate</button>
+<br><br>
+<img id="signImage" width="300">
+
+<script>
+function showSign(){
+    let text = document.getElementById("textInput").value.toLowerCase();
+    document.getElementById("signImage").src = "/static/signs/" + text + ".png";
+}
+</script>
+
+
+</body>
+</html>
